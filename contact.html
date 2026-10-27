@@ -19,11 +19,11 @@
 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 <nav class="main-nav" aria-label="Main navigation">
 <a href="index.html" >Home</a>
+<a href="about.html" >About</a>
 <a href="design-ideas.html" >Design Ideas</a>
 <a href="build-renovate.html" >Build & Renovate</a>
 <a href="plans-projects.html" >Plans & Projects</a>
 <a href="cost-guides.html" >Cost Guides</a>
-<a href="about.html" >About</a>
 <a href="contact.html" aria-current="page">Contact</a>
 </nav>
 </div></header>
@@ -91,7 +91,7 @@
               <textarea id="notes" name="notes" placeholder="Describe lot conditions, desired square footage, timeline, and any specific structural questions..."></textarea>
             </div>
           </div>
-          <button type="submit" class="button button-dark" style="width: 100%;">Submit Consultation Brief</button>
+          <button type="submit" id="intake-submit-btn" class="button button-dark intake-submit-button" style="width: 100%;">Submit Consultation Brief</button>
           <div id="form-note" class="form-note" style="display: none;"></div>
         </form>
       </div>
@@ -118,7 +118,7 @@
           </iframe>
         </div>
         
-        <div class="map-info-card">
+        <div class="map-info-card" id="studio-info-card">
           <div class="map-info-header">
             <span class="badge-pill badge-pill-ink">PORTLAND STUDIO</span>
             <h3>HouseCraft Daily HQ &amp; Lab</h3>
@@ -132,7 +132,7 @@
             </div>
             <div class="map-detail-item">
               <span class="detail-label">DIRECT CONTACT</span>
-              <p>Email: <a href="mailto:studio@housecraftdaily.com">studio@housecraftdaily.com</a><br>Phone: <a href="tel:+15035550198">+1 (503) 555-0198</a></p>
+              <p>Email: <a href="mailto:studio@housecraftdaily.com" class="map-email-link">studio@housecraftdaily.com</a><br>Phone: <a href="tel:+15035550198">+1 (503) 555-0198</a></p>
             </div>
             <div class="map-detail-item">
               <span class="detail-label">VISITOR ACCESS</span>
@@ -141,8 +141,8 @@
           </div>
 
           <div class="map-actions">
-            <a class="button button-dark" href="https://maps.google.com/?q=428+NW+11th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener">Open in Google Maps</a>
-            <a class="button button-light" href="#intake">Submit Project Brief</a>
+            <a class="button button-dark btn-maps" href="https://maps.google.com/?q=428+NW+11th+Ave,+Portland,+OR+97209" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="button button-light btn-submit-brief" href="#intake">Submit Project Brief</a>
           </div>
         </div>
       </div>
@@ -243,17 +243,6 @@
 <a class="social-btn" role="listitem" href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.800 3h3.100l-6.800 7.700L22 21h-6.200l-4.900-6.300L5.300 21H2.200l7.300-8.300L2 3h6.300l4.400 5.800L17.800 3zm-1.100 16.200h1.700L7.400 4.700H5.600l11.100 14.500z"/></svg></a>
 </div>
 </div>
-<div class="footer-col footer-links-col">
-<h3>Quick links</h3>
-<div class="footer-links-2col">
-<a href="design-ideas.html">Design Ideas</a>
-<a href="cost-guides.html">Cost Guides</a>
-<a href="build-renovate.html">Build &amp; Renovate</a>
-<a href="about.html">About</a>
-<a href="plans-projects.html">Plans &amp; Projects</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
 <div class="footer-col footer-newsletter-col">
 <h3>Newsletter</h3>
 <p class="footer-news-text">Get verified design ideas, cost guides and building tips in your inbox. No spam.</p>
@@ -264,6 +253,18 @@
 <span class="newsletter-msg" role="status" aria-live="polite"></span>
 </form>
 </div>
+<div class="footer-col footer-nav-col footer-nav-quick">
+<h3>Quick links</h3>
+<a href="design-ideas.html">Design Ideas</a>
+<a href="build-renovate.html">Build &amp; Renovate</a>
+<a href="plans-projects.html">Plans &amp; Projects</a>
+</div>
+<div class="footer-col footer-nav-col footer-nav-helpful">
+<h3>Helpful links</h3>
+<a href="cost-guides.html">Cost Guides</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 <div class="wrap footer-note"><strong>Good to know:</strong> HouseCraft is an independent architectural and construction guide. Verify local municipal codes, engineering stamps, and site permits with licensed professionals.</div>
 <div class="wrap footer-bottom">
@@ -271,6 +272,9 @@
 <span>Designed with integrity.</span>
 </div>
 </footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7 1.41 1.41L11 8.83V19h2V8.83l4.59 4.58L19 12z"/></svg>
+</button>
 <script src="assets/site.js"></script>
 </body>
 </html>

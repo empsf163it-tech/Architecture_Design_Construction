@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(open));
       toggle.textContent = open ? '✕' : '☰';
     });
+
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      }
+    });
   }
 
   // 2. Contact / Project Consultation Intake Form
@@ -106,7 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const category = btn.getAttribute('data-filter') || 'all';
 
         planCards.forEach((card) => {
-          if (category === 'all' || card.getAttribute('data-category') === category) {
+          const cat = card.getAttribute('data-category') || '';
+          if (category === 'all' || cat.split(' ').includes(category)) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
@@ -141,9 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (el) el.textContent = val;
         } else if (type === 'paint') {
           const el = document.querySelector('#preview-paint');
-          const sample = document.querySelector('#preview-paint-sample');
           if (el) el.textContent = val;
-          if (sample && color) sample.style.background = color;
         }
       });
     });
@@ -159,5 +166,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     punchlistChecks.forEach((chk) => chk.addEventListener('change', updateCounter));
     updateCounter();
+  }
+
+  // 8. Back to Top Functionality
+  const backToTopBtn = document.querySelector('#back-to-top');
+  if (backToTopBtn) {
+    const handleScroll = () => {
+      const scrolled = window.scrollY || document.documentElement.scrollTop;
+      if (scrolled > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   }
 });

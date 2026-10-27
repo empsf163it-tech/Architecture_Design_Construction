@@ -19,11 +19,11 @@
 <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 <nav class="main-nav" aria-label="Main navigation">
 <a href="index.html" >Home</a>
+<a href="about.html" >About</a>
 <a href="design-ideas.html" >Design Ideas</a>
 <a href="build-renovate.html" >Build & Renovate</a>
 <a href="plans-projects.html" aria-current="page">Plans & Projects</a>
 <a href="cost-guides.html" >Cost Guides</a>
-<a href="about.html" >About</a>
 <a href="contact.html" >Contact</a>
 </nav>
 </div></header>
@@ -76,7 +76,7 @@
         <button class="plan-filter-btn" data-filter="narrow-lot">Narrow Lot</button>
       </div>
       <div class="plan-catalog-grid card-grid-2x2">
-        <div class="plan-card">
+        <div class="plan-card" data-category="courtyard single-story">
           <div class="card-img-top">
             <img src="assets/images/plan-courtyard.jpg" alt="Plan H-101 The Solarium Courtyard residence">
           </div>
@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="plan-card">
+        <div class="plan-card" data-category="single-story">
           <div class="card-img-top">
             <img src="assets/images/plan-longhouse.jpg" alt="Plan H-102 The High-Meadow Longhouse residence">
           </div>
@@ -102,7 +102,7 @@
             </div>
           </div>
         </div>
-        <div class="plan-card">
+        <div class="plan-card" data-category="narrow-lot">
           <div class="card-img-top">
             <img src="assets/images/plan-infill.jpg" alt="Plan H-103 The Compact Infill Pavilion residence">
           </div>
@@ -115,7 +115,7 @@
             </div>
           </div>
         </div>
-        <div class="plan-card">
+        <div class="plan-card" data-category="two-story">
           <div class="card-img-top">
             <img src="assets/images/plan-split-level.jpg" alt="Plan H-104 The Multigenerational Split residence">
           </div>
@@ -335,17 +335,6 @@
 <a class="social-btn" role="listitem" href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.800 3h3.100l-6.800 7.700L22 21h-6.200l-4.900-6.300L5.300 21H2.200l7.300-8.300L2 3h6.300l4.400 5.800L17.800 3zm-1.100 16.200h1.700L7.400 4.700H5.600l11.100 14.500z"/></svg></a>
 </div>
 </div>
-<div class="footer-col footer-links-col">
-<h3>Quick links</h3>
-<div class="footer-links-2col">
-<a href="design-ideas.html">Design Ideas</a>
-<a href="cost-guides.html">Cost Guides</a>
-<a href="build-renovate.html">Build &amp; Renovate</a>
-<a href="about.html">About</a>
-<a href="plans-projects.html">Plans &amp; Projects</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
 <div class="footer-col footer-newsletter-col">
 <h3>Newsletter</h3>
 <p class="footer-news-text">Get verified design ideas, cost guides and building tips in your inbox. No spam.</p>
@@ -356,6 +345,18 @@
 <span class="newsletter-msg" role="status" aria-live="polite"></span>
 </form>
 </div>
+<div class="footer-col footer-nav-col footer-nav-quick">
+<h3>Quick links</h3>
+<a href="design-ideas.html">Design Ideas</a>
+<a href="build-renovate.html">Build &amp; Renovate</a>
+<a href="plans-projects.html">Plans &amp; Projects</a>
+</div>
+<div class="footer-col footer-nav-col footer-nav-helpful">
+<h3>Helpful links</h3>
+<a href="cost-guides.html">Cost Guides</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 <div class="wrap footer-note"><strong>Good to know:</strong> HouseCraft is an independent architectural and construction guide. Verify local municipal codes, engineering stamps, and site permits with licensed professionals.</div>
 <div class="wrap footer-bottom">
@@ -363,6 +364,9 @@
 <span>Designed with integrity.</span>
 </div>
 </footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7 1.41 1.41L11 8.83V19h2V8.83l4.59 4.58L19 12z"/></svg>
+</button>
 <script src="assets/site.js"></script>
 </body>
 </html>
