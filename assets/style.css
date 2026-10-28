@@ -46,7 +46,7 @@
   --card-bg: #ffffff;
   --font-family: 'Bungee Spice', cursive;
   --serif: 'Bungee Spice', cursive;
-  --sans: 'Bungee Spice', cursive;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --min-font-size: 12px;
   --max-font-size: 4.5rem;
 }
@@ -79,12 +79,21 @@ body {
    TYPOGRAPHY CONTRAST & LEGIBILITY RULES
    Text must be 100% clearly visible anywhere in any background style
    ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: 'Bungee Spice', cursive;
   font-palette: --logo-palette;
   color: var(--ink);
   line-height: 1.25;
   margin-top: 0;
+}
+
+h4, h5, h6 {
+  font-family: var(--sans);
+  font-palette: normal;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-top: 0;
+  font-weight: 700;
 }
 
 h1 { font-size: clamp(2rem, 4.5vw, 4.5rem); }
@@ -97,8 +106,19 @@ p, li, td, th, span, div, a, button, input, select, textarea, label {
   font-size: max(12px, 1rem);
 }
 
-.brand-text, .main-nav a, .button, input, select, textarea, button, .kicker, th, label, .badge-pill {
+p {
+  font-family: var(--sans);
+  font-palette: normal;
+  line-height: 1.6;
+}
+
+.brand-text strong {
   font-family: 'Bungee Spice', cursive;
+}
+
+.brand-text span, .main-nav a, .button, input, select, textarea, button, .kicker, th, label, .badge-pill {
+  font-family: var(--sans);
+  font-palette: normal;
 }
 
 /* Base links: strictly no default underlines or underscores */
@@ -666,27 +686,70 @@ img {
   border-bottom: 3px solid var(--ochre);
 }
 
+.transformation-metrics-bar {
+  margin-top: 24px;
+}
+
+.transformation-metrics-bar,
+.metric-block {
+  font-family: var(--sans) !important;
+}
+
+.transformation-metrics-bar .metric-block h4,
+.transformation-metrics-bar h4,
 .metric-block h4 {
-  color: var(--ochre);
-  font-palette: --logo-palette-ochre;
-  font-size: 12px;
-  margin: 0 0 6px;
-  letter-spacing: .08em;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  color: #f2b880 !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  line-height: 1.35 !important;
+  text-shadow: none !important;
 }
 
+.transformation-metrics-bar .metric-block strong,
+.transformation-metrics-bar strong,
 .metric-block strong {
-  font-size: 22px;
-  color: #ffffff;
-  display: block;
-  font-family: var(--serif);
-  font-palette: --logo-palette-light;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  display: block !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  margin: 2px 0 4px !important;
+  text-shadow: none !important;
 }
 
+.transformation-metrics-bar .metric-block p,
+.transformation-metrics-bar p,
 .metric-block p {
-  font-size: 12px;
-  color: var(--sage);
-  margin: 4px 0 0;
-  line-height: 1.4;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #d8e5dc !important;
+  margin: 4px 0 0 !important;
+  line-height: 1.45 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+}
+
+/* Ensure other metadata, card labels and stat blocks remain crisp and readable */
+.hero-stat-block span,
+.hero-stat-block strong,
+.canvas-card-label,
+.canvas-card-val,
+.card-eyebrow,
+.readiness-status,
+.impact-cost {
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
 }
 
 /* SECTION 3: Ideas for Every Room */
@@ -1201,12 +1264,15 @@ img {
 }
 
 .colour-chip span {
-  background: rgba(14, 35, 27, 0.90) !important;
+  background: rgba(14, 35, 27, 0.92) !important;
   color: #ffffff !important;
-  padding: 2px 2px !important;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  padding: 3px 2px !important;
   border-radius: 3px !important;
   font-size: 10px !important;
-  letter-spacing: 0 !important;
+  font-weight: 700 !important;
+  letter-spacing: .04em !important;
   display: block !important;
   text-align: center !important;
   white-space: nowrap !important;
@@ -1221,13 +1287,16 @@ img {
 .orientation-tag {
   background: var(--sage) !important;
   color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
   padding: 0 12px !important;
   border-radius: 4px !important;
-  font-size: 11px !important;
+  font-size: 11.5px !important;
   font-weight: 700 !important;
   border: 1px solid var(--line) !important;
   border-left: 4px solid var(--ochre) !important;
   margin-top: auto !important;
+  margin-bottom: 0 !important;
   height: 34px !important;
   min-height: 34px !important;
   max-height: 34px !important;
@@ -1239,6 +1308,7 @@ img {
   box-sizing: border-box !important;
   letter-spacing: .06em !important;
   text-transform: uppercase !important;
+  text-shadow: none !important;
 }
 
 /* SECTION 3: Material & Texture Library */
@@ -1368,27 +1438,38 @@ img {
 .callout-num {
   width: 32px;
   height: 32px;
+  min-width: 32px;
   border-radius: 50%;
-  background: var(--ink);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  border: 1px solid var(--ochre);
+  background: var(--ink) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  border: 1.5px solid var(--ochre) !important;
+  text-shadow: none !important;
 }
 
 .callout-text h4 {
-  font-size: 14px;
-  margin: 0 0 4px;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--ink) !important;
+  margin: 0 0 4px !important;
+  line-height: 1.35 !important;
 }
 
 .callout-text p {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 13px !important;
+  color: var(--text-muted) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
 }
 
 /* SECTION 5: Build a Moodboard */
@@ -2690,13 +2771,24 @@ img {
   justify-content: space-between;
   box-sizing: border-box;
   box-shadow: 0 6px 20px rgba(20, 55, 44, 0.12);
+  font-family: var(--sans) !important;
+}
+
+.calc-results-box * {
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
 }
 
 .calc-results-box h3 {
-  color: var(--ochre);
-  font-palette: --logo-palette-ochre;
-  font-size: clamp(16px, 2.5vw, 20px);
-  margin: 0 0 14px;
+  color: #f2b880 !important;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: clamp(16px, 2.5vw, 20px) !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  margin: 0 0 14px !important;
+  text-shadow: none !important;
 }
 
 .calc-total-wrap {
@@ -2704,24 +2796,31 @@ img {
 }
 
 .calc-total-label {
-  font-size: 11px;
-  color: var(--sage);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  display: block;
-  margin-bottom: 6px;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 11.5px !important;
+  color: #d8e5dc !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .08em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+  text-shadow: none !important;
 }
 
 .calc-total-val {
-  font-size: clamp(26px, 5.5vw, 38px);
-  color: #ffffff;
-  font-family: var(--serif);
-  font-palette: --logo-palette-light;
-  display: block;
-  line-height: 1.15;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: clamp(30px, 5.5vw, 42px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  display: block !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  text-shadow: none !important;
 }
 
 .calc-sub-grid {
@@ -2735,18 +2834,47 @@ img {
 }
 
 .calc-sub-item span {
-  font-size: 11.5px;
-  color: var(--sage);
-  display: block;
-  margin-bottom: 4px;
-  line-height: 1.25;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #c4d7cb !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .04em !important;
+  text-shadow: none !important;
 }
 
 .calc-sub-item strong {
-  font-size: clamp(14px, 2.2vw, 18px);
-  color: #ffffff;
-  display: block;
-  white-space: nowrap;
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: clamp(15px, 2.2vw, 20px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  display: block !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: none !important;
+}
+
+.calc-results-footer span,
+.calc-timeline-label {
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-size: 13px !important;
+  color: #d8e5dc !important;
+  text-shadow: none !important;
+}
+
+.calc-results-footer strong,
+.calc-results-footer #est-timeline {
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
 }
 
 @media (max-width: 900px) {
@@ -4383,6 +4511,7 @@ img {
 
 /* 4. heading (strictly locked to 44px to prevent vertical misalignment across cards) */
 .card-heading,
+.colour-palette-card h3,
 .card-body-padded h3,
 .card-body-padded h4,
 .style-content h3,
@@ -4395,6 +4524,9 @@ img {
 .plan-comp-body h3,
 .tier-item-body h4,
 .transform-desc h3 {
+  font-family: var(--sans) !important;
+  font-palette: normal !important;
+  font-weight: 700 !important;
   font-size: 16px !important;
   margin: 0 !important;
   color: var(--ink) !important;
@@ -5225,6 +5357,22 @@ img {
   gap: 14px;
   align-items: center;
 }
+@media (max-width: 640px) {
+  .hero-actions-group {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .hero-actions-group .button {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
 
 /* Responsive collapse for split heroes & contractor feature grid */
 @media (max-width: 900px) {
@@ -5619,6 +5767,25 @@ img {
   .hero-split-left-section .hero-split-left { grid-template-columns: 1fr; }
   .hero-split-left-section .hero-media-frame { min-height: 280px; }
 }
+@media (max-width: 640px) {
+  .hero-split-left-section .build-hero-text {
+    width: 100% !important;
+  }
+  .hero-split-left-section .hero-actions-group {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .hero-split-left-section .hero-actions-group .button {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
 
 
 /* ==========================================================================
@@ -5719,3 +5886,88 @@ main h1,
   }
 }
 
+
+
+/* ==========================================================================
+   ARCHITECTURAL TAXONOMY (Explore Design Styles): Uncropped Image Framing
+   ========================================================================== */
+.styles-deep-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 28px !important;
+  width: 100% !important;
+}
+
+.styles-deep-grid .style-deep-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 16px rgba(20, 55, 44, 0.06) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease !important;
+}
+
+.styles-deep-grid .style-deep-card:hover {
+  transform: translateY(-4px) !important;
+  border-right: 2px solid var(--ochre) !important;
+  border-bottom: 2px solid var(--ochre) !important;
+  box-shadow: 0 12px 28px rgba(20, 55, 44, 0.12) !important;
+}
+
+.styles-deep-grid .card-img-top {
+  position: relative !important;
+  width: 100% !important;
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 320px !important;
+  overflow: hidden !important;
+  background: var(--sage) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.styles-deep-grid .card-img-top img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  transition: transform .4s ease !important;
+}
+
+.styles-deep-grid .style-deep-card:hover .card-img-top img {
+  transform: scale(1.04) !important;
+}
+
+.styles-deep-grid .card-body-padded {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+}
+
+.styles-deep-grid .card-links-wrap {
+  margin-top: auto !important;
+  padding-top: 18px !important;
+}
+
+@media (max-width: 900px) {
+  .styles-deep-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .styles-deep-grid .card-img-top {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .styles-deep-grid .card-img-top {
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+}
